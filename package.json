@@ -1,0 +1,51 @@
+{
+  "name": "dsh-skill-quality-gate",
+  "version": "0.1.0",
+  "description": "SKILL.md 质量门禁：skill-authoring 运行期技能 + turn/end 后置 lint 注入 + 规则增删事务 CLI + 确定性 linter + 触发回归，一个插件包交付",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek",
+    "harness",
+    "skill",
+    "lint",
+    "quality-gate"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "lib",
+    "scripts",
+    "data",
+    "skills",
+    "test",
+    "docs",
+    "skill-lint-on-save.ps1",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "lint": "node scripts/skill-lint.mjs",
+    "selftest": "node scripts/skill-lint-selftest.mjs",
+    "turnend-selftest": "node scripts/skill-lint-turnend-plugin.mjs --self-test",
+    "trigger-regression": "node scripts/trigger-regression.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT"
+}

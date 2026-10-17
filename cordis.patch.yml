@@ -1,0 +1,9 @@
+# dsh-skill-quality-gate bundle patch: mount the quality-gate plugin.
+#
+# Applied when this bundle appears in a profile's dsh.profile.bundles list.
+# Host half only: registers the skill-authoring runtime skill and a turn/end
+# post-check that lints SKILL.md files changed during a turn and injects
+# concrete linter gaps into the next turn (notice only, never blocks).
+- insert:
+    - id: dsh-skill-quality-gate
+      name: dsh-skill-quality-gate

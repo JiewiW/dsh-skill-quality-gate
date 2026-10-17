@@ -1,0 +1,67 @@
+{
+  "description": "触发回归样本集（harness 补偿方案「方向三 3.2」）：每条 {query, expectSkill}。query 为真实症状/诉求原话，expectSkill 为必须被命中的技能。",
+  "criteria": {
+    "matching": "扫描技能目录下 */SKILL.md，取 frontmatter description 与正文，归一化（小写、去空白与标点）后做最长公共子串匹配",
+    "min_match_chars": 4,
+    "min_ascii_match_chars": 8,
+    "pass": "该条样本的命中技能集合包含 expectSkill 即通过（集合包含判据，不要求 top1，避免新技能抢命中导致误判）"
+  },
+  "cases": [
+    {
+      "query": "未对文件进行数字签名，无法在当前系统上运行该脚本",
+      "expectSkill": "powershell-scripting-standards"
+    },
+    {
+      "query": "日志被 read 工具判为 binary，读不出内容",
+      "expectSkill": "powershell-scripting-standards"
+    },
+    {
+      "query": "@($obj.FixedItems) 凭空多修复了 1 处",
+      "expectSkill": "powershell-scripting-standards"
+    },
+    {
+      "query": "有几个互相独立的任务，想同时开跑",
+      "expectSkill": "dsh-task-board"
+    },
+    {
+      "query": "让这件事每天定时自动跑，cron 表达式怎么写",
+      "expectSkill": "dsh-task-board"
+    },
+    {
+      "query": "接到一个复杂任务，该建一张卡还是拆成父子卡",
+      "expectSkill": "dsh-task-board"
+    },
+    {
+      "query": "几个子任务之间有先后依赖，怎么安排",
+      "expectSkill": "dsh-task-board"
+    },
+    {
+      "query": "任务跑到一半失败了，怎么重跑",
+      "expectSkill": "dsh-task-board"
+    },
+    {
+      "query": "怎么把一个任务塞进已失败列",
+      "expectSkill": "dsh-task-board"
+    },
+    {
+      "query": "不想占用当前对话，让它后台跑",
+      "expectSkill": "dsh-task-board"
+    },
+    {
+      "query": "想换个模型和权限再跑一次，保留上次记录",
+      "expectSkill": "dsh-task-board"
+    },
+    {
+      "query": "多个子任务并发执行，父任务会一起跑吗",
+      "expectSkill": "dsh-task-board"
+    },
+    {
+      "query": "怎么看任务跑没跑完、成功没有",
+      "expectSkill": "dsh-task-board"
+    },
+    {
+      "query": "跨会话带着进度续命，新会话怎么接着做",
+      "expectSkill": "dsh-task-board"
+    }
+  ]
+}

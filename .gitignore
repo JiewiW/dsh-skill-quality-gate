@@ -1,0 +1,8 @@
+node_modules/
+*.tgz
+.vscode/
+.DS_Store
+reports/
+surgery/
+test-*.mjs
+*.log
